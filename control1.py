@@ -9,13 +9,14 @@ def decorator(func):
 def func(Vn,Vk,t):
     a=(Vk-Vn)/t
     return a
-
-Vn=int(input())
-Vk=int(input())
-t=int(input())
-
-
-func(Vn,Vk,t)
-
+try:
+    Vn=int(input())
+    Vk=int(input())
+    t=int(input())
+    func(Vn,Vk,t)
+except TypeError:
+    print("Вы ввели не числа")
+except ZeroDivisionError:
+    print("Время не может равняться нулю")
 
 
